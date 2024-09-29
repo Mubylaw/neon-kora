@@ -25,7 +25,9 @@ const Options = ({ amount, setAmount }) => {
           <img src="/assets/online.png" alt="" />
           <div className="title">Online Payment</div>
           <p>Customer</p>
-          <div className="btn">Start Demo</div>
+          <a href="/onlinepayment">
+            <div className="btn">Start Demo</div>
+          </a>
         </div>
       </div>
     </div>
