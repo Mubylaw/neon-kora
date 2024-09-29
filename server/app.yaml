@@ -1,0 +1,22 @@
+runtime: nodejs18
+service: default
+env_variables:
+  JWT_COOKIE_EXPIRE: "30"
+  JWT_EXPIRE: "30d"
+  ACCESS_KEY_ID: "AKIA6FTCPYR3VC6WOAXW"
+  BUCKET_NAME: "trailbucket12345"
+  REGION: "us-east-2"
+  SECRET_ACCESS_KEY: "PTf5hJWDjjQcRlUdrWKufbyNm81xAHlab7Eh0lJH"
+  JWT_SECRET: "qwdnkr3n3k4j5nsksjentwke"
+  MAX_FILE_UPLOAD: "5000000"
+  MONGO_URI: "mongodb+srv://mubylaw:Junctionbox360!@cluster0.0p8sw.mongodb.net/test?retryWrites=true&w=majority"
+  KORA_SECRET_KEY: "sk_test_HjtBxMpmLynu37LPiYrgbyLh7Aa2P3ZNPyhL3A2K"
+  TERMII_API_KEY: "TLxTY2xgoe45CUDZjkwos6xNdvoSljn09Q5JUGFOw00KxiNIszp8pWvaCEsT6G"
+  BREVO_API_KEY: "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"
+
+inbound_services:
+  - warmup
+
+handlers:
+  - url: /.*
+    script: auto
