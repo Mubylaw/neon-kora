@@ -40,7 +40,7 @@ const Landing = ({}) => {
                 solution.
               </p>
               <div className="btn">
-                <a href="/signup">Start Demo</a>
+                <a href="/demo">Start Demo</a>
               </div>
               <div className="bens">
                 <div className="item">
@@ -145,7 +145,7 @@ const Landing = ({}) => {
               corrupti molestias consequuntur!
             </p>
             <div className="btn">
-              <a href="/signup">Start Demo</a>
+              <a href="/demo">Start Demo</a>
             </div>
           </div>
         </div>
@@ -176,7 +176,7 @@ const Landing = ({}) => {
             </p>
           </div>
           <div className="btn">
-            <a href="/signup">Start Demo</a>
+            <a href="/demo">Start Demo</a>
           </div>
         </div>
         <div className="img">
