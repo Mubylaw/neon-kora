@@ -12,7 +12,9 @@ const Demo = ({}) => {
         <div className="logo">
           <img src="/assets/logo.png" alt="" />
         </div>
-        <div className="hom">Home</div>
+        <div className="hom">
+          <a href="/">Home</a>
+        </div>
       </div>
       <Options amount={amount} setAmount={setAmount} />
     </div>
