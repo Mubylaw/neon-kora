@@ -29,7 +29,9 @@ const Pos = ({}) => {
         <div className="logo">
           <img src="/assets/logo.png" alt="" />
         </div>
-        <div className="hom">Home</div>
+        <div className="hom">
+          <a href="/">Home</a>
+        </div>
       </div>
       <div className="psp">
         <div className="text">
