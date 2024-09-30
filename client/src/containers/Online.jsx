@@ -5,16 +5,34 @@ import { connect } from "react-redux";
 import next from "../assets/svg/arrownext.svg";
 import Lottie from "lottie-react";
 import fingerAni from "../assets/anime/finger.json";
+import { getPaymentUrl } from "../store/actions/payment";
 
-const Online = ({}) => {
+const Online = ({ getPaymentUrl, currentUser, url }) => {
   const [type, setType] = useState(false);
   const [finger, setFinger] = useState(false);
+  const [price, setPrice] = useState(10000);
 
   const navigate = useNavigate();
 
   const handleNav = (loc) => {
     navigate(loc);
   };
+
+  const handlePay = () => {
+    const { user } = currentUser;
+    getPaymentUrl({
+      email: user.email ? user.email : "anonymous@gmail.com",
+      name: user.firstName ? user.firstName : "Anonymous",
+      price,
+    });
+  };
+
+  useEffect(() => {
+    if (url && typeof url === "string") {
+      window.location = url;
+    }
+  }, [url]);
+
   return (
     <div className="demo-home">
       <div className="header">
@@ -73,7 +91,7 @@ const Online = ({}) => {
                 </div>
                 <img src={next} alt="" />
               </div>
-              <div className="item">
+              <div className="item" onClick={handlePay}>
                 <div className="up">
                   <img src="/assets/pay.png" alt="" />
                   <span>Other Payment Methods</span>
@@ -98,7 +116,7 @@ const Online = ({}) => {
 };
 
 function mapStateToProps(state) {
-  return {};
+  return { url: state.payment.url };
 }
 
-export default connect(mapStateToProps, {})(Online);
+export default connect(mapStateToProps, { getPaymentUrl })(Online);
