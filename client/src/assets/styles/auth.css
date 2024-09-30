@@ -133,7 +133,8 @@ input {
 .auth-container .links {
   display: flex;
   align-items: center;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -272,10 +273,64 @@ p.forgot {
   .auth-container .auto-popup {
     width: 90%;
   }
+
+  img.swiggle {
+    display: none;
+  }
+
+  .auth-container .header {
+    padding: 30px 15px;
+    align-items: start;
+    justify-content: end;
+  }
+
+  .auth-container .header img {
+    left: 15px;
+  }
+
+  .auth-container h1 {
+    margin: 25px 15px 0;
+    font-size: 32px;
+  }
+
+  .auth-container .subtext {
+    margin: 5px 15px;
+  }
+
+  .auth-container .inner-form.reg {
+    width: 100%;
+    margin: 40px 0 20px;
+  }
+
+  .ins .duo {
+    flex-direction: column;
+  }
+
+  .ins .duo .group {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .auth-container .inner-form {
+    margin: 40px 15px 20px;
+    width: calc(100% - 30px);
+  }
+
+  .auth-container .inner-form .ins {
+    height: 280px;
+  }
+
+  .auth-container svg {
+    top: calc(-100vw * 0.25);
+  }
 }
 
 @media (max-width: 400px) {
   .auth-container .auto-popup h2 {
     margin-right: 30px;
+  }
+
+  .auth-container svg {
+    top: calc(-100vw * 0.15);
   }
 }

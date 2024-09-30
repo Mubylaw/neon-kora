@@ -385,7 +385,15 @@
 
   .how .title {
     text-align: center;
-    font-size: 45px;
+    font-size: 32px;
+  }
+
+  .how .const .sub {
+    font-size: 18px;
+  }
+
+  .atm .inner .const .title {
+    font-size: 30px;
   }
 
   .how .const .item:nth-child(1),
