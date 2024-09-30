@@ -73,7 +73,11 @@ const Dashboard = ({ logout, user, getUserFn }) => {
         </div>
       </div>
       <div className="finger">
-        <img src={bio ? "/assets/green.png" : "/assets/red.png"} alt="" />
+        <img
+          src={bio ? "/assets/green.png" : "/assets/red.png"}
+          alt=""
+          onClick={() => setBio(!bio)}
+        />
         <p>Click on the Fingerprint to turn off biometrics payment</p>
       </div>
       <div className="recent">
