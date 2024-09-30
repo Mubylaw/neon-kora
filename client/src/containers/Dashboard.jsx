@@ -98,7 +98,29 @@ const Dashboard = ({ logout, user, getUserFn }) => {
               <div className="up">
                 <img src="/assets/bank (1).png" alt="" />
                 <div className="deets">
-                  <div className="name">MoniePoint</div>
+                  <div className="name">FirstBank</div>
+                  <div className="type">In-app Transfer</div>
+                </div>
+              </div>
+              <div className="amount">₦38,000.00</div>
+            </div>
+          </div>
+          <div className="duo">
+            <div className="item">
+              <div className="up">
+                <img src="/assets/bank (3).png" alt="" />
+                <div className="deets">
+                  <div className="name">GTB</div>
+                  <div className="type">POS Payment</div>
+                </div>
+              </div>
+              <div className="amount">₦5,100.00</div>
+            </div>
+            <div className="item">
+              <div className="up">
+                <img src="/assets/bank (2).png" alt="" />
+                <div className="deets">
+                  <div className="name">Access</div>
                   <div className="type">Online Payment</div>
                 </div>
               </div>
@@ -114,39 +136,17 @@ const Dashboard = ({ logout, user, getUserFn }) => {
                   <div className="type">Online Payment</div>
                 </div>
               </div>
-              <div className="amount">₦31,000.00</div>
+              <div className="amount">₦150,000.00</div>
             </div>
             <div className="item">
               <div className="up">
-                <img src="/assets/bank (1).png" alt="" />
+                <img src="/assets/bank (3).png" alt="" />
                 <div className="deets">
-                  <div className="name">MoniePoint</div>
-                  <div className="type">Online Payment</div>
+                  <div className="name">GTB</div>
+                  <div className="type">POS Payment</div>
                 </div>
               </div>
-              <div className="amount">₦31,000.00</div>
-            </div>
-          </div>
-          <div className="duo">
-            <div className="item">
-              <div className="up">
-                <img src="/assets/bank.png" alt="" />
-                <div className="deets">
-                  <div className="name">MoniePoint</div>
-                  <div className="type">Online Payment</div>
-                </div>
-              </div>
-              <div className="amount">₦31,000.00</div>
-            </div>
-            <div className="item">
-              <div className="up">
-                <img src="/assets/bank (1).png" alt="" />
-                <div className="deets">
-                  <div className="name">MoniePoint</div>
-                  <div className="type">Online Payment</div>
-                </div>
-              </div>
-              <div className="amount">₦31,000.00</div>
+              <div className="amount">₦500.00</div>
             </div>
           </div>
         </div>
