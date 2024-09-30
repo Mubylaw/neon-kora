@@ -132,6 +132,9 @@ const Landing = ({}) => {
             <div className="sub">No Fingerprints, No Problem</div>
             <p>Switch to Face ID biometric authentication at any time.</p>
           </div>
+          <div className="img sm">
+            <img src="/assets/phone.png" alt="" />
+          </div>
         </div>
       </div>
       <div className="atm">
@@ -139,10 +142,9 @@ const Landing = ({}) => {
           <div className="const">
             <div className="title">What ATM Cards?</div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-              tenetur neque autem esse incidunt eaque omnis laborum quibusdam
-              recusandae sunt, excepturi nihil similique et est explicabo. Quos
-              corrupti molestias consequuntur!
+              Users can forget about outdated, fraud-prone ATM cards. Our
+              technology securely links their biometrics to their bank accounts,
+              automating transfers with a single touch.
             </p>
             <div className="btn">
               <a href="/demo">Start Demo</a>

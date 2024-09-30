@@ -176,6 +176,10 @@
   margin-top: 40px;
 }
 
+.how .const .img.sm {
+  display: none;
+}
+
 .how .const .item {
   width: 40%;
   display: flex;
@@ -324,4 +328,171 @@
   color: #fff;
   text-decoration: none;
   margin-left: 10px;
+}
+
+@media (max-width: 1200px) {
+  .top .poster {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .landing-home .hero .top {
+    flex-direction: column;
+  }
+
+  .landing-home .hero .text .top {
+    flex-direction: row;
+  }
+
+  .hero .top .content {
+    width: 100%;
+    padding: 35px 15px;
+  }
+
+  .hero .top .img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero .top .img img {
+    margin: 30px auto;
+  }
+
+  .hero .feats {
+    padding: 65px 15px;
+  }
+
+  .how {
+    min-height: unset;
+    background: #fff;
+    padding: 35px 15px 0;
+  }
+
+  .how .const {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how .const .img.sm {
+    display: block;
+  }
+
+  .how .const .img.sm img {
+    height: 100%;
+  }
+
+  .how .title {
+    text-align: center;
+    font-size: 45px;
+  }
+
+  .how .const .item:nth-child(1),
+  .how .const .item:nth-child(2) {
+    margin: 25px 0;
+  }
+
+  .how .const .item:nth-child(2n) {
+    align-items: start;
+    text-align: left;
+  }
+
+  .how .const .item {
+    margin: 25px 0;
+    width: 300px;
+  }
+
+  .how .const p {
+    width: 100%;
+  }
+
+  .how .const .item img {
+    width: 45px;
+  }
+
+  .atm .inner .const {
+    margin: 50px 10px;
+  }
+
+  .cases {
+    flex-direction: column;
+  }
+
+  .cases .content {
+    width: 100%;
+    padding: 35px 15px;
+  }
+
+  .cases .content .title {
+    font-size: 29px;
+  }
+
+  .cases img,
+  .cases .img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .top .poster {
+    margin-top: 65px;
+  }
+
+  .poster h1 {
+    font-size: 40px;
+    line-height: 51px;
+  }
+
+  .hero .top .img img {
+    width: 100%;
+  }
+
+  .hero .feats .item .text {
+    margin: 25px 10px;
+  }
+
+  .hero .feats .item .text .top span.tiny {
+    font-size: 31px;
+    margin-left: 3px;
+    line-height: 47px;
+  }
+
+  .hero .feats {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero .feats .item .text .top {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .hero .feats .item .text .top.big {
+    font-size: 90px;
+  }
+
+  .hero .feats .item .icon {
+    font-size: 24px;
+    margin-left: 0px;
+  }
+
+  .hero .feats .item .text p {
+    margin-top: 4px;
+  }
+
+  .footer {
+    padding: 35px 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .how .const .item {
+    width: 100%;
+  }
+
+  .how .const {
+    align-items: start;
+  }
 }
