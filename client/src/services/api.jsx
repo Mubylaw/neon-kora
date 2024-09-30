@@ -20,5 +20,5 @@ export function apiCall(method, path, data, config) {
   });
 }
 
-// export const baseUrl = "https://unique-apricot-424015-a7.ew.r.appspot.com";
-export const baseUrl = "http://localhost:5000";
+export const baseUrl = "https://unique-apricot-424015-a7.ew.r.appspot.com";
+// export const baseUrl = "http://localhost:5000";

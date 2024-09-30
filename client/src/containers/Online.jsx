@@ -28,7 +28,7 @@ const Online = ({ getPaymentUrl, currentUser, url }) => {
     const path = window.location.search;
     const id = path.split("=").pop();
     const money = parseInt(id);
-    if (typeof money === "number" && money > 100) {
+    if (typeof money === "number" && money > 100 && money < 1000000) {
       setPrice(money);
       const val = splitAmount(money);
       setMax(val[0]);
