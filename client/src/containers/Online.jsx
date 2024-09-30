@@ -6,13 +6,35 @@ import next from "../assets/svg/arrownext.svg";
 import Lottie from "lottie-react";
 import fingerAni from "../assets/anime/finger.json";
 import { getPaymentUrl } from "../store/actions/payment";
+import { splitAmount } from "../utils/seed";
 
 const Online = ({ getPaymentUrl, currentUser, url }) => {
   const [type, setType] = useState(false);
   const [finger, setFinger] = useState(false);
+  const [view, setView] = useState(false);
   const [price, setPrice] = useState(10000);
+  const [min, setMin] = useState(4500);
+  const [max, setMax] = useState(5500);
 
   const navigate = useNavigate();
+
+  const formatNumberWithCommas = (number) => {
+    return number
+      ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      : "";
+  };
+
+  useEffect(() => {
+    const path = window.location.search;
+    const id = path.split("=").pop();
+    const money = parseInt(id);
+    if (typeof money === "number" && money > 100) {
+      setPrice(money);
+      const val = splitAmount(money);
+      setMax(val[0]);
+      setMin(val[1]);
+    }
+  }, []);
 
   const handleNav = (loc) => {
     navigate(loc);
@@ -20,10 +42,11 @@ const Online = ({ getPaymentUrl, currentUser, url }) => {
 
   const handlePay = () => {
     const { user } = currentUser;
+    setView(true);
     getPaymentUrl({
       email: user.email ? user.email : "anonymous@gmail.com",
       name: user.firstName ? user.firstName : "Anonymous",
-      price,
+      price: price / 100,
     });
   };
 
@@ -72,15 +95,15 @@ const Online = ({ getPaymentUrl, currentUser, url }) => {
           </div>
           <div className="line">
             <div className="item">Burgers</div>
-            <div className="price">₦5,299.00</div>
+            <div className="price">₦{formatNumberWithCommas(min)}</div>
           </div>
           <div className="line">
             <div className="item">Chicken and Fries</div>
-            <div className="price">₦8,000.00</div>
+            <div className="price">₦{formatNumberWithCommas(max)}</div>
           </div>
           <div className="tots">
             <div className="item">Total</div>
-            <div className="price">₦13,299.00</div>
+            <div className="price">₦{formatNumberWithCommas(price)}</div>
           </div>
           {type ? (
             <div className="types">
@@ -91,10 +114,13 @@ const Online = ({ getPaymentUrl, currentUser, url }) => {
                 </div>
                 <img src={next} alt="" />
               </div>
-              <div className="item" onClick={handlePay}>
+              <div
+                className={`item ${view ? "btn-load" : ""}`}
+                onClick={handlePay}
+              >
                 <div className="up">
                   <img src="/assets/pay.png" alt="" />
-                  <span>Other Payment Methods</span>
+                  <span className="btn_text">Other Payment Methods</span>
                 </div>
                 <img src={next} alt="" />
               </div>

@@ -42,3 +42,15 @@ export const banks = [
   "Wema Bank Plc",
   "Zenith Bank Plc",
 ];
+
+export const splitAmount = (amount) => {
+  const numericAmount = parseInt(amount, 10);
+
+  if (numericAmount > 1) {
+    const randomSplit = Math.floor(Math.random() * (numericAmount - 1)) + 1;
+
+    return [randomSplit, numericAmount - randomSplit];
+  } else {
+    alert("Please enter an amount greater than 1 to split.");
+  }
+};

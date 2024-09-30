@@ -228,6 +228,11 @@
   color: white;
 }
 
+.demo-home .btn-load::after {
+  border: 4px solid transparent;
+  border-top-color: #3535f2;
+}
+
 @media (max-width: 760px) {
   .center .pa {
     margin: 20px;

@@ -1,15 +1,25 @@
 const Options = ({ amount, setAmount }) => {
+  const formatNumberWithCommas = (number) => {
+    return number?.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
+  const handlePriceChange = (value) => {
+    const numericValue = value.replace(/[^0-9]/g, "");
+    setAmount(numericValue);
+  };
   return (
     <div className="center">
       <div className="h3">Choose a Payment type</div>
       <div className="amount">
         <input
-          type="number"
+          type="text"
           name="amount"
           placeholder="Amount to Pay"
           id=""
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={(e) => handlePriceChange(e.target.value)}
+          value={formatNumberWithCommas(amount)}
+          min={100}
+          max={100000}
         />
       </div>
       <div className="options">
@@ -25,7 +35,7 @@ const Options = ({ amount, setAmount }) => {
           <img src="/assets/online.png" alt="" />
           <div className="title">Online Payment</div>
           <p>Customer</p>
-          <a href="/onlinepayment">
+          <a href={`/onlinepayment?amount=${amount}`}>
             <div className="btn">Start Demo</div>
           </a>
         </div>
