@@ -56,6 +56,50 @@ const Online = ({ getPaymentUrl, currentUser, url }) => {
     }
   }, [url]);
 
+  const handleBiometrics = () => {
+    if (window.PublicKeyCredential) {
+      // Generate a challenge (example: a random 32-byte buffer)
+      const challenge = new Uint8Array(32); // Create a 32-byte Uint8Array
+      window.crypto.getRandomValues(challenge); // Fill it with cryptographically secure random values
+
+      // Generate a user ID (example: using a string and converting it to Uint8Array)
+      const userId = new TextEncoder().encode("1234"); // Encode the user ID as UTF-8
+
+      const options = {
+        publicKey: {
+          rp: { id: "neon-kora.onrender.com", name: "Neon Kora" },
+          user: {
+            id: userId, // Use the Uint8Array for the user ID
+            name: "Neon Kora API",
+            displayName: "Tappit",
+          },
+          challenge: challenge, // Use the generated challenge
+          pubKeyCredParams: [{ type: "public-key", alg: -7 }],
+          authenticatorSelection: {},
+          // Additional options can be added here
+        },
+      };
+
+      // Create a new credential
+      navigator.credentials
+        .create(options)
+        .then((credential) => {
+          // Handle the created credential
+          console.log("Credential created:", credential);
+          handleNav("/success");
+        })
+        .catch((error) => {
+          console.error("Error creating credential:", error);
+          handleNav("/failed");
+        });
+
+      // Uncomment if you want to get existing credentials
+      // navigator.credentials.get(options);
+    } else {
+      alert("Cannot use biometrics on this device, try another device");
+    }
+  };
+
   return (
     <div className="demo-home">
       <div className="header">
@@ -71,8 +115,8 @@ const Online = ({ getPaymentUrl, currentUser, url }) => {
           <div className="ans">
             <Lottie animationData={fingerAni} />
           </div>
-          <div className="btn" onClick={() => handleNav("/success")}>
-            Demo successful Payment
+          <div className="btn" onClick={() => handleBiometrics()}>
+            Authenticate with Biometrics
           </div>
         </div>
       ) : (

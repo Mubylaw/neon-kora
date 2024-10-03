@@ -12,7 +12,7 @@ import Demo from "./Demo";
 import Pos from "./Pos";
 import Online from "./Online";
 import Success from "./Success";
-import Bio from "./Bio";
+import Failed from "./Failed";
 
 const Main = (props) => {
   const {
@@ -113,9 +113,9 @@ const Main = (props) => {
         />
         <Route
           exact
-          path="/bio"
+          path="/failed"
           element={
-            <Bio
+            <Failed
               currentUser={currentUser}
               removeError={removeError}
               position="one"
