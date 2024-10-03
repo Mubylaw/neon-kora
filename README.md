@@ -1,7 +1,16 @@
 # Project Name
+Tapit by Neon
 
 ## Overview
 This project contains a **client** and a **server** folder, each with its own dependencies. To run the application, follow the setup instructions below.
+
+Powered by Kora, this solution is a next-generation biometric payment platform designed to make payments simple, fast, and secure. Users can link their fingerprints or Face ID to their bank accounts, enabling quick and effortless payments at POS terminals, online, and anywhere else without the need for traditional cards or PINs. With an average transaction time of just 3 seconds and advanced fraud-proof mechanisms, it offers a seamless payment experience for everyone.
+
+Key Features:
+
+- Biometric Authentication: Pay with a touch—no cards or PINs needed.
+- Secure & Fraud-Proof: Advanced security ensures safe transactions.
+- Versatile Use Cases: Suitable for in-store, online, and withdrawal payments.
 
 ## Getting Started
 
